@@ -1132,6 +1132,25 @@
         To investigate this, we introduce a <i>recall process</i> for every turn after the first: before responding to the next user input, the SLM is explicitly prompted to restate the initial speaking style.
         This design helps disentangle instruction retention from style execution.
         </p>
+        <p class="has-text-grey">
+        To quantify whether the model remembers the initial style instruction \(s\),
+        we define the <strong>Recall rate</strong> \(R\).
+        For a given style \(s\) and dialogue topic \(i\), let \(r_{i,j}\) denote the recalled instruction at assistant turn \(j\)
+        (queried right before generating the response).
+        The recall rate at turn \(j\) is:
+        </p>
+
+        <div>
+        $$ R_j(s) = \frac{1}{N}\sum_{i=1}^{N}\mathbb{1}_{\text{recall}}(r_{i,j}, s)\times 100\% $$
+        </div>
+
+        <p class="has-text-grey">
+        where \(N\) is the number of evaluation samples and \(\mathbb{1}_{\text{recall}}(\cdot)\) is a binary judge:
+        it equals 1 if the recalled instruction matches the original style instruction \(s\), and 0 otherwise.
+
+        Our experiments show that the recall rate \(R\) of three proprietary SLMs remains consistently high across all turns and styles.
+        Across turns, these models achieve near-perfect recall, whereas Step-Audio 2 mini exhibits lower recall that gradually declines, although it remains non-trivial. Importantly, even in settings with substantial style degradation, such as sadness or slow speech, models like GPT-4o mini often still recall the instruction correctly. This suggests that style amnesia is not primarily caused by forgetting the instruction. Introducing the recall process reduces degradation for all proprietary models, with the largest improvement observed on GPT-4o mini. In contrast, Step-Audio 2 mini benefits only marginally, likely due to its weaker recall reliability.
+        </p>
 
         <div class="columns is-variable is-5 mt-4">
           <!-- Figure 6 -->
@@ -1141,9 +1160,8 @@
                 <img src="static/images/recall_page.png" alt="Figure 6">
               </figure>
               <p class="is-size-7 has-text-grey mt-2">
-                Illustration of the recall process.
+                Illustration of the recall process. 
               </p>
-            </div>
           </div>
 
           <!-- Table 3 (image) -->
@@ -1152,16 +1170,9 @@
             <figure class="image">
             <img src="static/images/recall_results.png" alt="Table 3">
             <figcaption class="is-size-7 has-text-grey mt-2">
-                Recall rate and the effect of the recall process on style consistency.
-                Recall rate is the percentage of times an SLM correctly restates its initial speaking-style instruction when explicitly asked before generating the next response.
+                Recall rate $R$ and the effect of the recall process on style consistency.
             </figcaption>
             </figure>
-
-            <p class="is-size-7 has-text-grey mt-2">
-            Across turns, the three proprietary SLMs achieve near-perfect recall, while Step-Audio 2 mini shows lower and declining recall (though still non-trivial).
-            Despite large style degradation in some settings (e.g., sadness or slow speech), models such as GPT-4o mini often still recall the instruction correctly, indicating that <i>style amnesia</i> is not primarily caused by forgetting.
-            Adding the recall process reduces degradation for all proprietary models, with the largest gains on GPT-4o mini; Step-Audio 2 mini improves only slightly, likely due to its weaker recall reliability.
-            </p>
         </div>
         </div>
         </div>
