@@ -326,7 +326,9 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Main Results</h2>
             <p class="has-text-grey">
-            To quantify style adherence, we define the <strong>instruction-following (IF) rate</strong>, denoted as $IF$:
+                To quantify style adherence, we adopt the <strong>Instruction-Following (IF) rate</strong> $IF$. 
+                For a given style $s$ and dialogue topic $i$, let $o_{i,j}$ denote the model's output at turn $j$.
+                The IF rate at turn $j$ is defined as:
             </p>
 
             <div>
@@ -334,24 +336,25 @@
             </div>
 
             <p class="has-text-grey">
-            where $N$ is the total number of topics and $\mathbb{1}(\cdot)$ is a binary style judge. We focus on two key metrics across $K$ turns:
+            where $N$ is the total number of evaluation samples and $\mathbb{1}(\cdot)$ is a binary style judge. We focus on two key metrics across $K$ turns:
             </p>
-
+            <br/>
             <ul>
-            <li>
+            <li class="has-text-grey">
                 <strong>first-turn IF rate \(IF_1\) :</strong> 
-                Measures the initial ability to follow the style. (Higher is better)
+                measures the initial ability to follow the style. (Higher is better)
             </li>
-            <li>
+            <li class="has-text-grey">
                 <strong>degradation rate \(D\) :</strong> 
-                Quantifies how much the style adherence decays in subsequent turns relative to \(IF_1\) . (Lower is better)
+                quantifies how much the style adherence decays in subsequent turns relative to \(IF_1\) . (Lower is better)
             </li>
             </ul>
 
             <div>
             $$ D = \sum_{j=2}^K \frac{\max(IF_1(s) - IF_j(s), 0)}{K-1} $$
             </div>
-        
+        <br/>
+        <br/>
         <div class="content has-text-centered">
           <figure class="image">
             <!-- TODO: replace with your screenshot path -->
