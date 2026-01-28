@@ -269,7 +269,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            In this paper, we show that when spoken language models (SLMs) are instructed to speak in a specific speaking style at the beginning of a multi-turn conversation, they cannot maintain the required speaking styles after several turns of interaction; we refer to this as the style amnesia of SLMs. We focus on paralinguistic speaking styles, including emotion, accent, volume, and speaking speed. We evaluate three proprietary and two open-source SLMs, demonstrating that none of these models can maintain a consistent speaking style when instructed to do so. We further show that when SLMs are asked to recall the style instruction in later turns, they can recall the style instruction, but they fail to express it throughout the conversation. We also show that explicitly asking the model to recall the style instruction can partially mitigate style amnesia. In addition, we examine various prompting strategies and find that SLMs struggle to follow the required style when the instruction is placed in system messages rather than user messages, which contradicts the intended function of system prompts.
+            In this paper, we show that when spoken language models (SLMs) are instructed to speak in a specific speaking style at the beginning of a multi-turn conversation, they cannot maintain the required speaking styles after several turns of interaction; we refer to this as the <i>style amnesia</i> of SLMs. We focus on paralinguistic speaking styles, including emotion, accent, volume, and speaking speed. We evaluate three proprietary and two open-source SLMs, demonstrating that none of these models can maintain a consistent speaking style when instructed to do so. We further show that when SLMs are asked to recall the style instruction in later turns, they can recall the style instruction, but they fail to express it throughout the conversation. We also show that explicitly asking the model to recall the style instruction can partially mitigate <i>style amnesia</i>. In addition, we examine various prompting strategies and find that SLMs struggle to follow the required style when the instruction is placed in system messages rather than user messages, which contradicts the intended function of system prompts.
           </p>
           <div class="has-text-centered mt-4">
             <figure class="image is-inline-block">
@@ -701,7 +701,7 @@
         <h2 class="title is-3">Analysis: Prompt Position</h2>
         <p class="has-text-grey">
             In this section, we conduct experiments under different prompt positions to investigate their effect
-            on style amnesia. In instruction-guided language models, system messages are designed with higher
+            on <i>style amnesia</i>. In instruction-guided language models, system messages are designed with higher
             priority than user messages to establish global behaviors and safety constraints. 
             However, our experiments show that placing style instructions in the system message is much less effective for SLMs than placing the same instructions in the user message.
         </p>
@@ -1130,7 +1130,7 @@
 
             <p class="is-size-7 has-text-grey mt-2">
             Across turns, the three proprietary SLMs achieve near-perfect recall, while Step-Audio 2 mini shows lower and declining recall (though still non-trivial).
-            Despite large style degradation in some settings (e.g., sadness or slow speech), models such as GPT-4o mini often still recall the instruction correctly, indicating that style amnesia is not primarily caused by forgetting.
+            Despite large style degradation in some settings (e.g., sadness or slow speech), models such as GPT-4o mini often still recall the instruction correctly, indicating that <i>style amnesia</i> is not primarily caused by forgetting.
             Adding the recall process reduces degradation for all proprietary models, with the largest gains on GPT-4o mini; Step-Audio 2 mini improves only slightly, likely due to its weaker recall reliability.
             </p>
         </div>
