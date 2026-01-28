@@ -325,7 +325,33 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Main Results</h2>
+            <p class="has-text-grey">
+            To quantify style adherence, we define the <strong>instruction-following (IF) rate</strong>, denoted as $IF$:
+            </p>
 
+            <div>
+            $$ IF_j(s) = \frac{\sum_{i=1}^{N}\mathbbm{1}(o_{i,j}, s)}{N} \times 100\% $$
+            </div>
+
+            <p class="has-text-grey">
+            where $N$ is the total number of topics and $\mathbbm{1}(\cdot)$ is a binary style judge. We focus on two key metrics across $K$ turns:
+            </p>
+
+            <ul>
+            <li>
+                <strong>first-turn IF rate \(IF_1\) :</strong> 
+                Measures the initial ability to follow the style. (Higher is better)
+            </li>
+            <li>
+                <strong>degradation rate \(D\) :</strong> 
+                Quantifies how much the style adherence decays in subsequent turns relative to \(IF_1\) . (Lower is better)
+            </li>
+            </ul>
+
+            <div>
+            $$ D = \sum_{j=2}^K \frac{\max(IF_1(s) - IF_j(s), 0)}{K-1} $$
+            </div>
+        
         <div class="content has-text-centered">
           <figure class="image">
             <!-- TODO: replace with your screenshot path -->
