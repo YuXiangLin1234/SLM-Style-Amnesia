@@ -325,7 +325,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Main Results</h2>
-            <p class="has-text-grey">
+            <p class="has-text-grey has-text-left">
                 To quantify style adherence, we adopt the <strong>Instruction-Following (IF) rate</strong> $IF$. 
                 For a given style $s$ and dialogue topic $i$, let $o_{i,j}$ denote the model's output at turn $j$.
                 The IF rate at turn $j$ is defined as:
@@ -335,16 +335,16 @@
             $$ IF_j(s) = \frac{\sum_{i=1}^{N}\mathbb{1}(o_{i,j}, s)}{N} \times 100\% $$
             </div>
 
-            <p class="has-text-grey">
+            <p class="has-text-grey has-text-left">
             where $N$ is the total number of evaluation samples and $\mathbb{1}(\cdot)$ is a binary style judge. We focus on two key metrics across $K$ turns:
             </p>
             <br/>
             <ul>
-            <li class="has-text-grey">
+            <li class="has-text-grey  has-text-left">
                 <strong>first-turn IF rate \(IF_1\) :</strong> 
                 measures the initial ability to follow the style. (Higher is better)
             </li>
-            <li class="has-text-grey">
+            <li class="has-text-grey  has-text-left">
                 <strong>degradation rate \(D\) :</strong> 
                 quantifies how much the style adherence decays in subsequent turns relative to \(IF_1\) . (Lower is better)
             </li>
@@ -728,7 +728,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Analysis: Prompt Position</h2>
-        <p class="has-text-grey">
+        <p class="has-text-grey  has-text-left">
             In this section, we conduct experiments under different prompt positions to investigate their effect
             on <i>style amnesia</i>. In instruction-guided language models, system messages are designed with higher
             priority than user messages to establish global behaviors and safety constraints. 
@@ -1125,14 +1125,14 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">SLM Recall Process</h2>
-        <p class="has-text-grey">
+        <p class="has-text-grey  has-text-left">
         In our multi-turn setting, we observe that an SLM’s adherence to the specified speaking style often degrades over time, even when the style is clearly provided at the beginning of the conversation.
         This motivates a closer examination of what actually breaks during interaction.
         A research question is: <i>Do SLMs forget the initial instruction, or do they remember it but fail to consistently express the specified style?</i> 
         To investigate this, we introduce a <i>recall process</i> for every turn after the first: before responding to the next user input, the SLM is explicitly prompted to restate the initial speaking style.
         This design helps disentangle instruction retention from style execution.
         </p>
-        <p class="has-text-grey">
+        <p class="has-text-grey  has-text-left">
         To quantify whether the model remembers the initial style instruction \(s\),
         we define the <strong>Recall rate</strong> \(R\).
         For a given style \(s\) and dialogue topic \(i\), let \(r_{i,j}\) denote the recalled instruction at assistant turn \(j\)
@@ -1144,7 +1144,7 @@
         $$ R_j(s) = \frac{1}{N}\sum_{i=1}^{N}\mathbb{1}_{\text{recall}}(r_{i,j}, s)\times 100\% $$
         </div>
 
-        <p class="has-text-grey">
+        <p class="has-text-grey  has-text-left">
         where \(N\) is the number of evaluation samples and \(\mathbb{1}_{\text{recall}}(\cdot)\) is a binary judge:
         it equals 1 if the recalled instruction matches the original style instruction \(s\), and 0 otherwise.
 
