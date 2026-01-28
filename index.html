@@ -288,7 +288,7 @@
               <img src="static/images/IF_Rate_en_sadness_page-transparent.png" alt="Figure 1">
             </figure>
             <p class="is-size-7 has-text-grey mt-2">
-              IF rate across turns when instruct SLM to speak sadly.
+              IF rate across assistant turns when instruct SLM to speak sadly.
             </p>
           </div>
 
@@ -297,7 +297,7 @@
               <img src="static/images/IF_Rate_en_anger_page-transparent.png" alt="Figure 4">
             </figure>
             <p class="is-size-7 has-text-grey mt-2">
-              IF rate across turns when instruct SLM to speak angrily.
+              IF rate across assistant turns when instruct SLM to speak angrily.
             </p>
           </div>
 
@@ -306,7 +306,7 @@
               <img src="static/images/IF_Rate_en_fast_page-transparent.png" alt="Figure 4">
             </figure>
             <p class="is-size-7 has-text-grey mt-2">
-              IF rate across turns when instruct SLM to speak fast.
+              IF rate across assistant turns when instruct SLM to speak fast.
             </p>
           </div>
         </div>
@@ -328,7 +328,7 @@
             <p class="has-text-grey has-text-left">
                 To quantify style adherence, we adopt the <strong>Instruction-Following (IF) rate</strong> $IF$. 
                 For a given style $s$ and dialogue topic $i$, let $o_{i,j}$ denote the model's output at turn $j$.
-                The IF rate at turn $j$ is defined as:
+                The IF rate at assistant turn $j$ is defined as:
             </p>
 
             <div>
@@ -336,7 +336,7 @@
             </div>
 
             <p class="has-text-grey has-text-left">
-            where $N$ is the total number of evaluation samples and $\mathbb{1}(\cdot)$ is a binary style judge. We focus on two key metrics across $K$ turns:
+            where $N$ is the total number of evaluation samples and $\mathbb{1}(\cdot)$ is a binary style judge. We focus on two key metrics across $K$ assistant turns:
             </p>
             <br/>
             <ul>
@@ -346,7 +346,7 @@
             </li>
             <li class="has-text-grey  has-text-left">
                 <strong>degradation rate \(D\) :</strong> 
-                quantifies how much the style adherence decays in subsequent turns relative to \(IF_1\) . (Lower is better)
+                quantifies how much the style adherence decays in subsequent assistant turns relative to \(IF_1\) . (Lower is better)
             </li>
             </ul>
 
@@ -384,10 +384,10 @@
                 <tr>
                   <th style="vertical-align: middle;">Model</th>
                   <th style="vertical-align: middle;">Style</th>
-                  <th style="vertical-align: middle;">Turn 1</th>
-                  <th style="vertical-align: middle;">Turn 2</th>
-                  <th style="vertical-align: middle;">Turn 3</th>
-                  <th style="vertical-align: middle;">Turn 4</th>
+                  <th style="vertical-align: middle;">Assistant Turn 1</th>
+                  <th style="vertical-align: middle;">Assistant Turn 2</th>
+                  <th style="vertical-align: middle;">Assistant Turn 3</th>
+                  <th style="vertical-align: middle;">Assistant Turn 4</th>
                   <th style="vertical-align: middle; color: #d9534f;">Style Amnesia?</th>
                 </tr>
               </thead>
@@ -876,7 +876,7 @@
                     <table class="promptpos-table">
                       <tbody>
                         <tr>
-                          <th>Turn 1</th>
+                          <th>Assistant Turn 1</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-indian/topic1_par1_gpt_A_turn1.wav" type="audio/wav">
@@ -884,7 +884,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 2</th>
+                          <th>Assistant Turn 2</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-indian/topic1_par1_gpt_A_turn2.wav" type="audio/wav">
@@ -892,7 +892,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 3</th>
+                          <th>Assistant Turn 3</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-indian/topic1_par1_gpt_A_turn3.wav" type="audio/wav">
@@ -900,7 +900,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 4</th>
+                          <th>Assistant Turn 4</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-indian/topic1_par1_gpt_A_turn4.wav" type="audio/wav">
@@ -918,7 +918,7 @@
                     <table class="promptpos-table">
                       <tbody>
                         <tr>
-                          <th>Turn 1</th>
+                          <th>Assistant Turn 1</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-mini-anger/topic16_par1_gpt_A_turn1.wav" type="audio/wav">
@@ -926,7 +926,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 2</th>
+                          <th>Assistant Turn 2</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-mini-anger/topic16_par1_gpt_A_turn2.wav" type="audio/wav">
@@ -934,7 +934,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 3</th>
+                          <th>Assistant Turn 3</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-mini-anger/topic16_par1_gpt_A_turn3.wav" type="audio/wav">
@@ -942,7 +942,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 4</th>
+                          <th>Assistant Turn 4</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-gpt-4o-mini-anger/topic16_par1_gpt_A_turn4.wav" type="audio/wav">
@@ -960,7 +960,7 @@
                     <table class="promptpos-table">
                       <tbody>
                         <tr>
-                          <th>Turn 1</th>
+                          <th>Assistant Turn 1</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn1.wav" type="audio/wav">
@@ -968,7 +968,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 2</th>
+                          <th>Assistant Turn 2</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn2.wav" type="audio/wav">
@@ -976,7 +976,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 3</th>
+                          <th>Assistant Turn 3</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn3.wav" type="audio/wav">
@@ -984,7 +984,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 4</th>
+                          <th>Assistant Turn 4</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/system-step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn4.wav" type="audio/wav">
@@ -1014,7 +1014,7 @@
                     <table class="promptpos-table">
                       <tbody>
                         <tr>
-                          <th>Turn 1</th>
+                          <th>Assistant Turn 1</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-indian/topic1_par1_gpt_A_turn1.wav" type="audio/wav">
@@ -1022,7 +1022,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 2</th>
+                          <th>Assistant Turn 2</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-indian/topic1_par1_gpt_A_turn2.wav" type="audio/wav">
@@ -1030,7 +1030,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 3</th>
+                          <th>Assistant Turn 3</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-indian/topic1_par1_gpt_A_turn3.wav" type="audio/wav">
@@ -1038,7 +1038,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 4</th>
+                          <th>Assistant Turn 4</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-indian/topic1_par1_gpt_A_turn4.wav" type="audio/wav">
@@ -1056,7 +1056,7 @@
                     <table class="promptpos-table">
                       <tbody>
                         <tr>
-                          <th>Turn 1</th>
+                          <th>Assistant Turn 1</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-mini-anger/topic16_par1_gpt_A_turn1.wav" type="audio/wav">
@@ -1064,7 +1064,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 2</th>
+                          <th>Assistant Turn 2</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-mini-anger/topic16_par1_gpt_A_turn2.wav" type="audio/wav">
@@ -1072,7 +1072,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 3</th>
+                          <th>Assistant Turn 3</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-mini-anger/topic16_par1_gpt_A_turn3.wav" type="audio/wav">
@@ -1080,7 +1080,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 4</th>
+                          <th>Assistant Turn 4</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/gpt-4o-mini-anger/topic16_par1_gpt_A_turn4.wav" type="audio/wav">
@@ -1098,7 +1098,7 @@
                     <table class="promptpos-table">
                       <tbody>
                         <tr>
-                          <th>Turn 1</th>
+                          <th>Assistant Turn 1</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn1.wav" type="audio/wav">
@@ -1106,7 +1106,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 2</th>
+                          <th>Assistant Turn 2</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn2.wav" type="audio/wav">
@@ -1114,7 +1114,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 3</th>
+                          <th>Assistant Turn 3</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn3.wav" type="audio/wav">
@@ -1122,7 +1122,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Turn 4</th>
+                          <th>Assistant Turn 4</th>
                           <td class="promptpos-audio">
                             <audio controls>
                               <source src="static/audios/step-audio2-mini-fast/topic3_par1_step-audio2-mini-vllm_turn4.wav" type="audio/wav">
@@ -1177,7 +1177,7 @@
         where \(N\) is the number of evaluation samples and \(\mathbb{1}_{\text{recall}}(\cdot)\) is a binary judge:
         it equals 1 if the recalled instruction matches the original style instruction \(s\), and 0 otherwise.
 
-        Our experiments show that the recall rate \(R\) of three proprietary SLMs remains consistently high across all turns and styles.
+        Our experiments show that the recall rate \(R\) of three proprietary SLMs remains consistently high across all assistant turns and styles.
         Across turns, these models achieve near-perfect recall, whereas Step-Audio 2 mini exhibits lower recall that gradually declines, although it remains non-trivial. Importantly, even in settings with substantial style degradation, such as sadness or slow speech, models like GPT-4o mini often still recall the instruction correctly. This suggests that style amnesia is not primarily caused by forgetting the instruction. Introducing the recall process reduces degradation for all proprietary models, with the largest improvement observed on GPT-4o mini. In contrast, Step-Audio 2 mini benefits only marginally, likely due to its weaker recall reliability.
         </p>
 
