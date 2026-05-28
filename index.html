@@ -202,20 +202,24 @@
             <!-- TODO: Replace with your paper title -->
             <h1 class="title is-1 publication-title">Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models</h1>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="https://scholar.google.com.tw/citations?hl=zh-TW&user=cZZ5vD8AAAAJ" target="_blank">Yu-Xiang Lin</a>,</span>
-                <span class="author-block">
-                  <a href="https://d223302.github.io/" target="_blank">Cheng-Han Chiang</a>,</span>
-                  <span class="author-block">
-                    <a href="https://speech.ee.ntu.edu.tw/~hylee/index.php" target="_blank">Hung-yi Lee</a>
-                  </span>
-                  </div>
+                <a href="https://scholar.google.com.tw/citations?hl=zh-TW&user=cZZ5vD8AAAAJ" target="_blank">Yu-Xiang Lin</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://d223302.github.io/" target="_blank">Cheng-Han Chiang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://speech.ee.ntu.edu.tw/~hylee/index.php" target="_blank">Hung-yi Lee</a><sup>1,2</sup>
+              </span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">National Taiwan University</span>
-                  </div>
+            <div class="is-size-6 publication-authors mt-2">
+              <span class="author-block"><sup>1</sup>National Taiwan University</span>
+              &nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup>NTU Artificial Intelligence Center of Research Excellence (NTU AI-CoRE)</span>
+            </div>
+
+            <div class="is-size-5 publication-authors mt-2">
+              <span class="author-block"><b>ACL 2026 Findings</b></span>
+            </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
@@ -648,8 +652,8 @@
                     </audio>
                   </td>
                   <td style="vertical-align: middle; font-size: 1.5rem;">
-                    <span class="icon has-text-success">
-                      <i class="fas fa-check"></i>
+                    <span class="icon has-text-danger">
+                      <i class="fas fa-times"></i>
                     </span>
                   </td>
                 </tr>
@@ -1213,6 +1217,81 @@
 
 
 
+<!-- ========================= -->
+<!-- Text-Acoustic Synergy -->
+<!-- ========================= -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Text-Acoustic Synergy</h2>
+        <p class="has-text-grey has-text-left">
+          We further investigate the relationship between textual and acoustic style expression.
+          Specifically, we ask: when instructed to "speak angrily," does the model change its semantic text, its acoustic features, or both?
+          Similarly, when instructed to "speak fast," does the textual output become more concise?
+        </p>
+        <br/>
+
+        <!-- Emotion -->
+        <h3 class="title is-4 has-text-left">Emotion</h3>
+        <p class="has-text-grey has-text-left">
+          We separately evaluate semantic and acoustic style adherence for emotion instructions.
+          For semantic evaluation, we use GPT-4o mini as the text-based emotion classifier on the transcription;
+          for acoustic evaluation, we use Emotion2vec-Large.
+          The results for Anger and Sadness are shown below.
+        </p>
+        <br/>
+        <p class="has-text-grey has-text-left">
+          For emotion, both semantic and acoustic features simultaneously suffer from <i>style amnesia</i>.
+          This indicates that when acoustic style degrades, the semantic style often degrades as well.
+        </p>
+        <br/>
+        <div class="content has-text-centered">
+          <figure class="image" style="max-width: 640px; margin: 0 auto;">
+            <img src="static/images/synergy_emotion.png" alt="Text-acoustic synergy for emotion styles">
+          </figure>
+          <p class="is-size-7 has-text-grey mt-2">
+            Text-acoustic synergy for emotion styles.
+          </p>
+        </div>
+        <br/>
+
+        <!-- Speaking Rate and Conciseness -->
+        <h3 class="title is-4 has-text-left">Speaking Rate and Conciseness</h3>
+        <p class="has-text-grey has-text-left">
+          We examine whether speed instructions affect not only the acoustic speaking rate but also the verbosity of the generated responses.
+          The figure below reports the average word count, speech duration, and WPM of generated responses per assistant turn.
+        </p>
+        <br/>
+        <p class="has-text-grey has-text-left">
+          In the first turn, SLMs employ different strategies to comply with the speed instruction.
+          Gemini Live produces fewer words under the fast condition, suggesting that it leverages conciseness to achieve a higher speaking rate.
+          In contrast, GPT-4o and Step-Audio 2 mini generate comparable or even more words with the fast instruction while compressing them into shorter durations,
+          relying primarily on acoustic acceleration rather than content reduction.
+        </p>
+        <br/>
+        <p class="has-text-grey has-text-left">
+          Across all models and both conditions, the word count and speech duration decrease over turns, likely because the conversational content is gradually exhausted as the dialogue progresses.
+          Despite this general trend, the WPM gap between the fast and slow conditions narrows consistently over turns.
+          This convergence indicates that SLMs progressively lose the ability to differentiate their speaking rate between the two conditions,
+          consistent with the <i>style amnesia</i> observed in the main results.
+        </p>
+        <br/>
+        <div class="content has-text-centered">
+          <figure class="image" style="max-width: 640px; margin: 0 auto;">
+            <img src="static/images/synergy_speed.png" alt="Text-acoustic synergy for speed styles">
+          </figure>
+          <p class="is-size-7 has-text-grey mt-2">
+            Text-acoustic synergy for speed styles.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- Paper poster -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -1240,10 +1319,10 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{StyleAmnesia2026,
+      <pre id="bibtex-code"><code>@inproceedings{lin-etal-2026-style,
   title={Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models},
-  author={Yu-Xiang Lin, Cheng-Han Chiang, Hung-yi Lee},
-  journal={arxiv},
+  author={Yu-Xiang Lin and Cheng-Han Chiang and Hung-yi Lee},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
   year={2026},
 }</code></pre>
     </div>
