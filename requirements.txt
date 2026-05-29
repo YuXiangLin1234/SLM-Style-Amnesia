@@ -1,0 +1,36 @@
+# Audio I/O / DSP (shared by inference + eval)
+numpy
+scipy
+soundfile
+librosa
+resampy
+pyloudnorm
+
+# Pytorch stack (used by inference_utils + eval_utils)
+torch
+torchaudio
+torchcrepe
+silero-vad
+
+# Inference: API clients
+openai
+google-genai
+python-dotenv
+tqdm
+
+# Eval-only
+matplotlib
+nltk
+textstat
+tabulate
+pandas
+
+# Eval judges
+# Parakeet TDT v2 ASR (speaking-rate metric) — NeMo ASR collection
+nemo_toolkit[asr]
+# emotion2vec-Large (emotion judge) via FunASR
+funasr
+# Voxlect's WhisperWrapper imports these directly; transformers is also
+# required by emotion2vec.
+transformers
+accelerate
